@@ -1,80 +1,105 @@
 <div align="center">
-  <br />
-    <a href="https://youtu.be/kt0FrkQgw8w" target="_blank">
-      <img src="https://github.com/user-attachments/assets/2afc2dc3-f840-4d98-9378-f34acd7df173" alt="Project Banner">
-    </a>
-  <br />
+  <h1>🚀 Harry Rose - 3D Developer Portfolio</h1>
+  <p>A modern, interactive 3D portfolio website showcasing development skills and experience</p>
 
   <div>
     <img src="https://img.shields.io/badge/-React_JS-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="react.js" />
     <img src="https://img.shields.io/badge/-Three_JS-black?style=for-the-badge&logoColor=white&logo=threedotjs&color=000000" alt="three.js" />
     <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
+    <img src="https://img.shields.io/badge/-Vite-black?style=for-the-badge&logoColor=white&logo=vite&color=646CFF" alt="vite" />
+    <img src="https://img.shields.io/badge/-GSAP-black?style=for-the-badge&logoColor=white&logo=greensock&color=88CE02" alt="gsap" />
   </div>
-
-  <h3 align="center">A 3D Dev Portfolio</h3>
-
-   <div align="center">
-     Build this project step by step with our detailed tutorial on <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a> YouTube. Join the JSM family!!
-    </div>
 </div>
 
-## 📋 <a name="table">Table of Contents</a>
+## 📋 Table of Contents
 
-1. 🤖 [Introduction](#introduction)
-2. ⚙️ [Tech Stack](#tech-stack)
-3. 🔋 [Features](#features)
-4. 🤸 [Quick Start](#quick-start)
-5. 🕸️ [Snippets (Code to Copy)](#snippets)
-6. 🔗 [Links](#links)
-7. 📦 [Assets](#assets)
-8. 🚀 [More](#more)
+1. ✨ [Features](#features)
+2. 🛠️ [Tech Stack](#tech-stack)
+3. 📁 [Project Structure](#project-structure)
+4. 🚀 [Getting Started](#getting-started)
+5. 📧 [Email Configuration](#email-configuration)
+6. 🎨 [Customization](#customization)
+7. 🚀 [Deployment](#deployment)
+8. 📞 [Contact](#contact)
 
-## 🚨 Tutorial
+## ✨ Features
 
-This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>. 
+A modern, interactive 3D portfolio website built with React, Three.js, and cutting-edge web technologies to create an immersive user experience.
 
-If you prefer visual learning, this is the perfect resource for you. Follow our tutorial to learn how to build projects like these step-by-step in a beginner-friendly manner!
+### Core Features
+- **3D Interactive Environment**: Immersive 3D scene with animated objects and camera controls
+- **Responsive Design**: Fully responsive across all devices and screen sizes
+- **Smooth Animations**: GSAP-powered animations and transitions
+- **Interactive Globe**: Real-time 3D globe showing location and availability
+- **Dynamic Contact System**: EmailJS integration for direct contact functionality
+- **Publication System**: Full-featured blog/publication management with rich text editor
+- **Resume Integration**: Dedicated resume page with downloadable PDF
+- **Client Reviews**: Interactive testimonials carousel
 
-<a href="https://youtu.be/kt0FrkQgw8w" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/1736fca5-a031-4854-8c09-bc110e3bc16d" /></a>
+### Advanced Features
+- **3D Models & Animations**: Custom 3D models with Leva controls for development
+- **Real-time Email**: Contact form with real-time email delivery
+- **Publication Management**: Admin panel for creating and managing blog posts
+- **Rich Text Editor**: Quill-based editor with markdown support
+- **Authentication System**: Secure admin authentication for publication management
+- **SEO Optimized**: React Helmet integration for dynamic meta tags
+- **Performance Optimized**: Lazy loading and optimized 3D assets
 
-## <a name="introduction">🤖 Introduction</a>
+## 🛠️ Tech Stack
 
-Built with React.js for handling the user interface, Three.js for rendering 3D elements, and styled with TailwindCSS, the 3D Minimalistic portfolio is a website project. The primary goal is to demonstrate the developer's skills in a unique manner that creates a lasting impact.
+### Frontend
+- **React 18.3.1** - Modern React with hooks and functional components
+- **Three.js 0.167.1** - Core 3D graphics library
+- **@react-three/fiber** - React renderer for Three.js
+- **@react-three/drei** - Useful helpers for React Three Fiber
+- **React Router DOM** - Client-side routing with multiple pages
+- **Tailwind CSS** - Utility-first CSS framework
+- **GSAP** - Professional-grade animation library
 
-If you're getting started and need assistance or face any bugs, join our active Discord community with over **34k+** members. It's a place where people help each other out.
+### 3D & Animation
+- **React Globe.gl** - Interactive 3D globe component
+- **Leva** - GUI controls for 3D development
+- **Maath** - Math utilities for 3D graphics
 
-<a href="https://discord.com/invite/n6EdbFJ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/618f4872-1e10-42da-8213-1d69e486d02e" /></a>
+### Build & Development  
+- **Vite** - Next-generation frontend build tool
+- **ESLint** - Code linting and quality assurance
+- **PostCSS & Autoprefixer** - CSS processing
 
-## <a name="tech-stack">⚙️ Tech Stack</a>
+### Backend & Services
+- **Express.js** - Backend server for publications
+- **EmailJS** - Email service integration
+- **Nodemailer** - Server-side email handling
+- **CORS** - Cross-origin resource sharing
 
-- Node.js
-- React.js
-- Three.js
-- React Three Fiber
-- React Three Drei
-- Email JS
-- Vite
-- Tailwind CSS
+### Content Management
+- **React Quill** - Rich text editor
+- **Markdown-it** - Markdown processing
+- **React Markdown** - Markdown rendering
 
-## <a name="features">🔋 Features</a>
+## 📁 Project Structure
 
-👉 **Immersive Hero**: An eye-catching 3D hacker room that responds to mouse movements, surrounded by animated mini-models.
-
-👉 **Interactive About Me**: A sleek bento grid layout featuring personal info, a 3D globe pinpointing location, tech stack icons, and a one-click email copy option.
-
-👉 **Dynamic Project Showcase**: Browse through projects while watching live demos inside a 3D computer model, seamlessly switching between different projects.
-
-👉 **Engaging Experience Timeline**: Hover over career milestones to trigger interactive 3D animations that bring your professional journey to life.
-
-👉 **Client Testimonials**: A dedicated section highlighting satisfied clients and their feedback.
-
-👉 **Easy Contact Form**: A user-friendly email form for visitors to reach out directly from your portfolio.
-
-👉 **Clean Footer**: A minimalist design featuring social media links for easy networking.
-
-👉 **Fully Responsive**: Optimized layout ensuring a smooth experience across all devices, from desktop to mobile.
-
-and many more, including code architecture and reusability 
+```
+threejs-portfolio/
+├── public/
+│   ├── assets/           # Static assets (images, icons, models)
+│   └── textures/         # 3D textures and materials
+├── src/
+│   ├── components/       # Reusable React components
+│   │   ├── 3D components # Three.js 3D objects
+│   │   └── UI components # User interface elements
+│   ├── sections/         # Main page sections
+│   │   ├── Hero.jsx      # Landing section with 3D scene
+│   │   ├── About.jsx     # About section with globe
+│   │   ├── Projects.jsx  # Project showcase
+│   │   ├── Contact.jsx   # Contact form
+│   │   └── ...          # Other sections
+│   ├── constants/        # Configuration and data
+│   ├── hooks/           # Custom React hooks
+│   └── utils/           # Utility functions
+├── server/              # Express.js backend
+└── server-controller/   # Server configuration
+```
 
 ## <a name="quick-start">🤸 Quick Start</a>
 
@@ -91,37 +116,41 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/JavaScript-Mastery-Pro/threejscc-portfolio.git
-cd threejscc-portfolio
+git clone https://github.com/Harryrosestudios/Dev-Portfolio.git
+cd Dev-Portfolio
 ```
 
 **Installation**
-
-Install the project dependencies using npm:
 
 ```bash
 npm install
 ```
 
-**Set Up Environment Variables**
+**Environment Setup**
 
-Create a new file named `.env` in the root of your project and add the following content:
+Create a `.env` file in the root directory:
 
 ```env
-REACT_APP_EMAILJS_USERID=your_emailjs_user_id
-REACT_APP_EMAILJS_TEMPLATEID=your_emailjs_template_id
-REACT_APP_EMAILJS_RECEIVERID=your_emailjs_receiver_id
+VITE_EMAILJS_SERVICE_ID=your_emailjs_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_emailjs_public_key
 ```
 
-Replace the placeholder values with your actual EmailJS credentials. You can obtain these credentials by signing up on the [EmailJS website](https://www.emailjs.com/).
-
-**Running the Project**
+**Start development server**
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser to view the project.
+**Start backend server** (if using publication features)
+
+```bash
+cd server-controller
+npm install
+npm start
+```
+
+The application will be available at `http://localhost:5173`
 
 ## <a name="snippets">🕸️ Snippets</a>
 
@@ -854,29 +883,92 @@ useGLTF.preload('/models/hacker-room.glb');
 
 </details>
 
-## <a name="links">🔗 Links</a>
+📧 ## Email Configuration
 
-Here is the list of all the resources used in the project video:
+The contact form uses EmailJS for email delivery. To set up:
 
-- [Hacker Room](https://sketchfab.com/3d-models/hacker-room-stylized-a0cfe6edf2dd494c8a95addf6bb13a10)
-- [Computer](https://sketchfab.com/3d-models/3d-computer-sketchfab-weekly-11-mar23-d9931a9aba7c4ea1bc12b2a59dcef16e)
-- [Target Model](https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/target-stand/model.gltf)
-- [React Logo](https://sketchfab.com/3d-models/react-logo-76174ceeba96487f9863f974636f641e)
-- [gltfjsx](https://gltf.pmnd.rs/)
-- [ReadyPlayerMe](https://readyplayer.me/)
-- [Mixamo](https://www.mixamo.com/)
-- [FBX Animations ZIP](https://drive.google.com/file/d/1yQhrRvEQFEwxbjG2qelv_T-gAatXJ3N1/view?usp=sharing)
+1. Create an account at [EmailJS](https://emailjs.com)
+2. Create an email service
+3. Create an email template
+4. Get your service ID, template ID, and public key
+5. Add them to your `.env` file
 
+## 🎨 Customization
 
-## <a name="assets">🔗 Assets</a>
+### Personalizing Content
 
-Models and Assets used in the project can be found [here](https://drive.google.com/file/d/1UiJyotDmF2_tBC-GeLpRZuFY_gx5e7iX/view?usp=sharing)
+1. **Update personal information** in `src/constants/index.js`:
+   - Navigation links
+   - Project details
+   - Work experience
+   - Client reviews
 
-## <a name="more">🚀 More</a>
-**Advance your skills with Next.js Pro Course**
+2. **Replace assets** in `public/assets/`:
+   - Profile images
+   - Project screenshots
+   - Company logos
+   - Icons
 
-Enjoyed creating this project? Dive deeper into our PRO courses for a richer learning experience. They're packed with detailed explanations, cool features, and exercises to boost your skills. Give it a go!
+3. **Modify 3D scene** in `src/sections/Hero.jsx`:
+   - Adjust camera positions
+   - Modify lighting
+   - Change 3D model scaling
 
-<a href="https://www.jsmastery.pro/ultimate-next-course" target="_blank">
-<img src="https://i.ibb.co/804sPK6/Image-720.png" alt="Project Banner">
-</a>
+### Styling
+
+The project uses Tailwind CSS with custom configurations in `tailwind.config.js`:
+- Custom color palette
+- Extended font families
+- Custom background images
+
+## 🚀 Deployment
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+This creates an optimized build in the `dist/` folder.
+
+### Deployment Options
+
+- **Vercel**: Automatic deployment with Git integration
+- **Netlify**: Drag-and-drop deployment or Git integration
+- **GitHub Pages**: Static hosting for the built files
+- **Custom Server**: Deploy to any web server
+
+## 📱 Browser Support
+
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
+
+**Note**: 3D features require WebGL support.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📞 Contact
+
+Harry Rose - [harry@harryrose.dev](mailto:harry@harryrose.dev)
+
+Project Link: [https://github.com/Harryrosestudios/Dev-Portfolio](https://github.com/Harryrosestudios/Dev-Portfolio)
+
+## 🙏 Acknowledgments
+
+- Three.js community for excellent 3D web technologies
+- React Three Fiber team for the amazing React integration
+- Tailwind CSS for the utility-first CSS framework
+- GSAP for professional animations
+- All open source contributors who made this possible
+
+---
+
+Made with ❤️ by Harry Rose

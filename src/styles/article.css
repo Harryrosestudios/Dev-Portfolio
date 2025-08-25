@@ -1,0 +1,122 @@
+/* Article Content Styles - NO BOXES */
+
+/* Ensure all content respects max width */
+.article-content * {
+  max-width: 100%;
+}
+
+/* Responsive images */
+.article-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem auto;
+  border-radius: 0.5rem;
+}
+
+/* Responsive tables */
+.article-content table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Code blocks responsive - NO HORIZONTAL SCROLL */
+
+/* Inline code */
+.article-content code {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Lists responsive */
+.article-content ul,
+.article-content ol {
+  padding-left: 1.5rem;
+  max-width: 100%;
+}
+
+.article-content li {
+  margin-bottom: 0.5rem;
+  word-wrap: break-word;
+}
+
+/* Links break properly */
+.article-content a {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  display: inline;
+}
+
+/* Blockquotes responsive */
+.article-content blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid #666;
+  overflow-wrap: break-word;
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 640px) {
+  .article-content {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  
+  .article-content h1 {
+    font-size: 1.75rem;
+  }
+  
+  .article-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .article-content h3 {
+    font-size: 1.25rem;
+  }
+  
+  .article-content pre {
+    font-size: 14px;
+  }
+  
+  .article-content ul,
+  .article-content ol {
+    padding-left: 1rem;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .article-content {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+}
+
+/* Desktop adjustments */
+@media (min-width: 1025px) {
+  .article-content {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+}
+
+/* Prevent horizontal scroll only */
+
+/* Ensure article container has no unwanted styling */
+.article-content p,
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6,
+.article-content ul,
+.article-content ol,
+.article-content blockquote {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}

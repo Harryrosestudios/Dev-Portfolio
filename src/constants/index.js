@@ -16,6 +16,16 @@ export const navLinks = [
   },
   {
     id: 4,
+    name: 'Resume',
+    href: '/resume',
+  },
+  {
+    id: 5,
+    name: 'Publications',
+    href: '/publications',
+  },
+  {
+    id: 6,
     name: 'Contact',
     href: '#contact',
   },
@@ -28,7 +38,7 @@ export const clientReviews = [
     position: 'Marketing Director at GreenLeaf',
     img: 'assets/review1.png',
     review:
-      'Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.',
+      'Working with Harry was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.',
   },
   {
     id: 2,
@@ -36,7 +46,7 @@ export const clientReviews = [
     position: 'Founder of TechGear Shop',
     img: 'assets/review2.png',
     review:
-      'Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.',
+      'Harry\'s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He\'s a true professional! Fantastic work.',
   },
   {
     id: 3,
@@ -44,7 +54,7 @@ export const clientReviews = [
     position: 'Project Manager at UrbanTech ',
     img: 'assets/review3.png',
     review:
-      'I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.',
+      'I can\'t say enough good things about Harry. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.',
   },
   {
     id: 4,
@@ -52,7 +62,7 @@ export const clientReviews = [
     position: 'CEO of BrightStar Enterprises',
     img: 'assets/review4.png',
     review:
-      'Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.',
+      'Harry was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.',
   },
 ];
 
@@ -260,29 +270,31 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 export const workExperiences = [
   {
     id: 1,
-    name: 'Framer',
-    pos: 'Lead Web Developer',
-    duration: '2022 - Present',
-    title: "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
-    icon: '/assets/framer.svg',
+    name: 'JPMorgan Chase & Co.',
+    pos: 'Software Development Intern',
+    duration: 'June 2025',
+    title: "Developed microservices using Java 17 and Spring Boot for financial transactions. Implemented Kafka consumers, integrated H2 database with JPA, and developed REST APIs for user balance queries.",
+    icon: '/assets/jpmorgan.svg',
     animation: 'victory',
   },
   {
     id: 2,
-    name: 'Figma',
-    pos: 'Web Developer',
-    duration: '2020 - 2022',
-    title: "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
-    icon: '/assets/figma.svg',
+    name: 'Library of Code',
+    pos: 'Systems Administrator - Volunteer',
+    duration: 'April 2025 - Present',
+    title: "Managing Google Workspace instance, maintaining Azure self-hosted services, and managing Docker instances. Responsible for Debian server user management and contributing to LOC Services development using GitLab.",
+    icon: '/assets/cloud.svg',
     animation: 'clapping',
   },
   {
     id: 3,
-    name: 'Notion',
-    pos: 'Junior Web Developer',
-    duration: '2019 - 2020',
-    title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
-    icon: '/assets/notion.svg',
+    name: 'Library of Code',
+    pos: 'Cloud Engineer II - Volunteer',
+    duration: 'Oct 2024 - April 2025',
+    title: "Provided community support for Cloud Service offerings and code-related queries. Collaborated directly with partners and managers in developing engineering projects.",
+    icon: '/assets/cloud.svg',
     animation: 'salute',
   },
 ];
+
+export const publications = [];
