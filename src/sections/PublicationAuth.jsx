@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import serverManager from '../utils/serverManager';
 
 const PublicationAuth = () => {
   const [stage, setStage] = useState('request'); // 'request' or 'verify'
@@ -8,10 +7,7 @@ const PublicationAuth = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-  const [serverStatus, setServerStatus] = useState('stopped'); // 'stopped', 'starting', 'running', 'stopping'
   const navigate = useNavigate();
-
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
   useEffect(() => {
     // Check if user is already authenticated
@@ -38,30 +34,22 @@ const PublicationAuth = () => {
     setLoading(true);
     setError('');
     setSuccess('');
-    setServerStatus('starting');
 
     try {
-      // Step 1: Check if controller is running
-      await serverManager.ensureControllerRunning();
+      setSuccess('Sending OTP...');
       
-      // Step 2: Start the OTP server
-      setSuccess('Starting authentication server...');
-      await serverManager.startServer();
-      
-      // Step 3: Wait for server to be ready
-      setSuccess('Waiting for server to be ready...');
-      await serverManager.waitForServer();
-      
-      setServerStatus('running');
-      setSuccess('Server ready! Sending OTP...');
-      
-      // Step 4: Send OTP request
-      const response = await fetch(`${API_URL}/api/send-otp`, {
+      // Use relative API path to avoid CORS issues
+      const response = await fetch('/api/send-otp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
+        body: JSON.stringify({})
       });
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
 
       const data = await response.json();
 
@@ -70,44 +58,24 @@ const PublicationAuth = () => {
         setStage('verify');
       } else {
         setError(data.message || 'Failed to send OTP');
-        // If OTP sending failed, stop the server
-        setServerStatus('stopping');
-        await serverManager.stopServer();
-        setServerStatus('stopped');
       }
     } catch (err) {
-      console.error('Error in OTP process:', err);
-      
-      if (err.message.includes('Server controller')) {
-        setError(
-          'Please start the server controller first:\n' +
-          '1. Open a new terminal\n' +
-          '2. Run: cd server-controller\n' +
-          '3. Run: npm install && npm start'
-        );
-      } else if (err.message.includes('Server failed to become ready')) {
-        setError('Authentication server failed to start. Please try again.');
-      } else {
-        setError('Network error. Please try again.');
-      }
-      
-      setServerStatus('stopped');
+      console.error('Error sending OTP:', err);
+      setError('Could not connect to server. Please check that the API server is running.');
     } finally {
       setLoading(false);
     }
   };
 
   const verifyOTP = async () => {
-    if (otp.length !== 6) {
-      setError('Please enter a 6-digit OTP');
-      return;
-    }
+    if (otp.length !== 6) return;
 
     setLoading(true);
     setError('');
+    setSuccess('');
 
     try {
-      const response = await fetch(`${API_URL}/api/verify-otp`, {
+      const response = await fetch('/api/verify-otp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -115,34 +83,30 @@ const PublicationAuth = () => {
         body: JSON.stringify({ otp }),
       });
 
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+
       const data = await response.json();
 
       if (data.success) {
-        // Store token with 24-hour expiry
-        localStorage.setItem('authToken', data.token);
+        // Store authentication token for 24 hours
         const expiryTime = new Date().getTime() + (24 * 60 * 60 * 1000);
+        localStorage.setItem('authToken', data.token || 'authenticated');
         localStorage.setItem('authTokenExpiry', expiryTime.toString());
         
-        // Stop the server after successful authentication
-        setSuccess('Authentication successful! Stopping server...');
-        setServerStatus('stopping');
-        
-        try {
-          await serverManager.stopServer();
-          setServerStatus('stopped');
-          console.log('Server stopped successfully');
-        } catch (stopError) {
-          console.warn('Failed to stop server:', stopError);
-          // Continue anyway as authentication was successful
-        }
-        
-        navigate('/publications/manage');
+        setSuccess('Authentication successful! Redirecting...');
+        setTimeout(() => {
+          navigate('/publications/manage');
+        }, 1000);
       } else {
-        setError(data.message || 'Invalid OTP');
+        setError(data.message || 'Invalid OTP. Please try again.');
+        setOtp('');
       }
     } catch (err) {
-      setError('Network error. Please try again.');
       console.error('Error verifying OTP:', err);
+      setError('Failed to verify OTP. Please try again.');
+      setOtp('');
     } finally {
       setLoading(false);
     }
@@ -150,9 +114,7 @@ const PublicationAuth = () => {
 
   const handleOtpChange = (e) => {
     const value = e.target.value.replace(/\D/g, '');
-    if (value.length <= 6) {
-      setOtp(value);
-    }
+    setOtp(value);
   };
 
   return (
@@ -165,7 +127,7 @@ const PublicationAuth = () => {
                 Harry Rose
               </a>
               <button 
-                onClick={() => navigate('/publications')} 
+                onClick={() => window.location.href = '/publications'} 
                 className="text-neutral-400 hover:text-white transition-colors flex items-center gap-2"
               >
                 <span>←</span> Back to Publications
@@ -173,67 +135,45 @@ const PublicationAuth = () => {
             </div>
           </div>
         </nav>
-        
+
         <section className="c-space pt-32 pb-20">
           <div className="max-w-md mx-auto">
-            <div className="bg-black-300 rounded-2xl p-8 shadow-2xl">
-              <h1 className="text-3xl font-bold text-white mb-6 text-center">
-                Article Management
-              </h1>
-
-              {/* Server Status Indicator */}
-              {serverStatus !== 'stopped' && (
-                <div className="mb-4 p-3 bg-blue-500/20 border border-blue-500 rounded-lg">
-                  <p className="text-blue-400 text-sm text-center flex items-center justify-center gap-2">
-                    {serverStatus === 'starting' && (
-                      <>
-                        <div className="w-4 h-4 border-2 border-blue-400 border-t-transparent rounded-full animate-spin" />
-                        Starting authentication server...
-                      </>
-                    )}
-                    {serverStatus === 'running' && (
-                      <>
-                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                        Authentication server running
-                      </>
-                    )}
-                    {serverStatus === 'stopping' && (
-                      <>
-                        <div className="w-4 h-4 border-2 border-yellow-400 border-t-transparent rounded-full animate-spin" />
-                        Stopping server...
-                      </>
-                    )}
-                  </p>
-                </div>
-              )}
+            <div className="bg-black-200 rounded-lg p-8 border border-white-500">
+              <div className="text-center mb-8">
+                <h1 className="text-2xl font-bold text-white mb-2">
+                  Admin Access
+                </h1>
+                <p className="text-white-600">
+                  {stage === 'request' 
+                    ? 'Request a one-time password to access the publications manager.'
+                    : 'Enter the verification code sent to your email.'
+                  }
+                </p>
+              </div>
 
               {stage === 'request' ? (
-                <div className="space-y-6">
-                  <p className="text-white-600 text-center">
-                    Click below to start the authentication server and receive an OTP code.
-                  </p>
-                  
+                <div className="space-y-4">
                   <button
                     onClick={sendOTP}
                     disabled={loading}
-                    className={`w-full py-4 px-6 rounded-lg font-medium transition-all ${
+                    className={`w-full py-3 px-6 rounded-lg font-medium transition-all ${
                       loading 
-                        ? 'bg-gray-600 cursor-not-allowed' 
+                        ? 'bg-gray-600 cursor-not-allowed text-gray-400' 
                         : 'bg-white-500 hover:bg-white-600 text-black'
                     }`}
                   >
                     {loading ? (
                       <span className="flex items-center justify-center gap-2">
                         <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin" />
-                        {serverStatus === 'starting' ? 'Starting Server...' : 'Sending OTP...'}
+                        Sending...
                       </span>
                     ) : (
-                      '🚀 Start Server & Send OTP'
+                      'Send OTP'
                     )}
                   </button>
                 </div>
               ) : (
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <p className="text-white-600 text-center">
                     Enter the 6-digit code sent to your email.
                   </p>
