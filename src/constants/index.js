@@ -36,7 +36,7 @@ export const clientReviews = [
     id: 1,
     name: 'Emily Johnson',
     position: 'Marketing Director at GreenLeaf',
-    img: 'assets/review1.png',
+    img: 'assets/review1.webp',
     review:
       'Working with Harry was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.',
   },
@@ -44,7 +44,7 @@ export const clientReviews = [
     id: 2,
     name: 'Mark Rogers',
     position: 'Founder of TechGear Shop',
-    img: 'assets/review2.png',
+    img: 'assets/review2.webp',
     review:
       'Harry\'s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He\'s a true professional! Fantastic work.',
   },
@@ -52,7 +52,7 @@ export const clientReviews = [
     id: 3,
     name: 'John Dohsas',
     position: 'Project Manager at UrbanTech ',
-    img: 'assets/review3.png',
+    img: 'assets/review3.webp',
     review:
       'I can\'t say enough good things about Harry. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.',
   },
@@ -60,7 +60,7 @@ export const clientReviews = [
     id: 4,
     name: 'Ether Smith',
     position: 'CEO of BrightStar Enterprises',
-    img: 'assets/review4.png',
+    img: 'assets/review4.webp',
     review:
       'Harry was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.',
   },
@@ -68,10 +68,10 @@ export const clientReviews = [
 
 export const myProjects = [
   {
-    title: 'Podcastr - AI Podcast Platform',
-    desc: 'Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
+    title: 'Lakitu - Mario Kart World MMR System',
+    desc: 'Lakitu is a cutting-edge matchmaking rating system serving 50,000+ active users in the Mario Kart World Discord community. This open-source platform features an advanced machine learning anti-cheat system that ensures fair competitive play across the global player base.',
     subdesc:
-      'Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.',
+      'Built with JavaScript for accessibility, PostgreSQL for robust data management, and Redis for high-performance caching, Lakitu exemplifies community-driven development with contributions from developers worldwide.',
     href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
     texture: '/textures/project/project1.mp4',
     logo: '/assets/project-logo1.png',
@@ -105,10 +105,10 @@ export const myProjects = [
     ],
   },
   {
-    title: 'LiveDoc - Real-Time Google Docs Clone',
-    desc: 'LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.',
+    title: 'IBM Aviation Rerouter - AI Flight Optimisation',
+    desc: 'A real-time global flight route optimisation platform that leverages multi-agent reinforcement learning to revolutionise aviation routing. This system integrates live aircraft data, weather patterns, and geopolitical constraints to save the aviation industry an estimated $40-50 million annually.',
     subdesc:
-      'With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.',
+      'Architected with Go for 4x HTTP efficiency, Python MARL engine for intelligent routing, FastAPI backend, and React/Next.js frontend. Features IBM Granite LLM integration for converting news into flight constraints.',
     href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
     texture: '/textures/project/project2.mp4',
     logo: '/assets/project-logo2.png',
@@ -142,10 +142,10 @@ export const myProjects = [
     ],
   },
   {
-    title: 'CarePulse - Health Management System',
-    desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
+    title: 'QualifAI - AI-Powered ATS & CV Optimiser',
+    desc: 'An intelligent application tracking system that uses LLMs to analyse job listings against CVs, highlighting compatibility and helping applicants understand requirements. It empowers job seekers to personalise their applications and put their best foot forward for dream positions.',
     subdesc:
-      'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
+      'Built with React, TypeScript, and Tailwind CSS for a seamless UI, Zustand for state management, and deployed on Vercel with Puter.js integration. Fun fact: QualifAI may have helped personalise the CV you received from me!',
     href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
     texture: '/textures/project/project3.mp4',
     logo: '/assets/project-logo3.png',
@@ -181,10 +181,10 @@ export const myProjects = [
     ],
   },
   {
-    title: 'Horizon - Online Banking Platform',
-    desc: 'Horizon is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.',
+    title: 'YouTube Mini Player Restorer - Chrome Extension',
+    desc: 'A lightweight Chrome extension that restores YouTube\'s removed mini player button, maintaining the beloved picture-in-picture functionality. With a 5-star rating on the Chrome Web Store and growing active users, it solves a real problem for the YouTube community.',
     subdesc:
-      'Built with Next.js 14 Appwrite, Dwolla and Plaid, Horizon ensures a smooth and secure banking experience, tailored to meet the needs of modern consumers.',
+      'Purposefully simple and performant at just 1.3MB, built with vanilla JavaScript, HTML, and CSS. Seamlessly integrates with YouTube\'s design language whilst preserving the original keyboard shortcut functionality.',
     href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
     texture: '/textures/project/project4.mp4',
     logo: '/assets/project-logo4.png',
@@ -218,10 +218,10 @@ export const myProjects = [
     ],
   },
   {
-    title: 'Imaginify - AI Photo Manipulation App',
-    desc: 'Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.',
+    title: 'AI Book Genre Classifier - Smart Library Organiser',
+    desc: 'A C++ application that combines barcode scanning with Meta\'s BART-large-mnli model to automatically classify and organise book collections. Created to solve the real-world problem of organising hundreds of books for a DIY built-in bookcase installation.',
     subdesc:
-      'Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.',
+      'Integrates with NETUM barcode scanners, OpenLibrary API for metadata, and Hugging Face for AI classification. Features dynamic genre learning, author-based alphabetical sorting, and handles both ISBN-10 and ISBN-13 formats.',
     href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
     texture: '/textures/project/project5.mp4',
     logo: '/assets/project-logo5.png',
