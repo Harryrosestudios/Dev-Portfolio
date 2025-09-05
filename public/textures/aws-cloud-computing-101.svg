@@ -1,0 +1,25 @@
+<svg width="400" height="480" viewBox="0 0 400 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="badgeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f0f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0e0e0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Badge background -->
+  <path d="M50 40 L350 40 L380 100 L380 380 L200 440 L20 380 L20 100 Z" fill="url(#badgeGradient)" stroke="#333" stroke-width="4"/>
+  
+  <!-- AWS Logo Area -->
+  <rect x="80" y="80" width="240" height="120" fill="#FF9900" rx="10"/>
+  <text x="200" y="130" text-anchor="middle" fill="white" font-size="24" font-weight="bold">AWS</text>
+  <text x="200" y="155" text-anchor="middle" fill="white" font-size="16">EDUCATE</text>
+  
+  <!-- Course Title -->
+  <text x="200" y="240" text-anchor="middle" fill="#333" font-size="20" font-weight="bold">Cloud</text>
+  <text x="200" y="265" text-anchor="middle" fill="#333" font-size="20" font-weight="bold">Computing 101</text>
+  
+  <!-- Decorative elements -->
+  <line x1="80" y1="290" x2="320" y2="290" stroke="#FF9900" stroke-width="2"/>
+  <circle cx="200" cy="340" r="30" fill="none" stroke="#FF9900" stroke-width="3"/>
+  <path d="M185 340 L195 350 L215 330" stroke="#FF9900" stroke-width="4" fill="none" stroke-linecap="round"/>
+</svg>
