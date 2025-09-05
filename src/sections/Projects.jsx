@@ -1,17 +1,43 @@
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { Suspense, useState } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Center, OrbitControls } from '@react-three/drei';
 
-import { myProjects } from '../constants/index.js';
+import { getProjects } from '../services/projectService.js';
 import CanvasLoader from '../components/Loading.jsx';
 import DemoComputer from '../components/DemoComputer.jsx';
 
-const projectCount = myProjects.length;
-
 const Projects = () => {
+  const [projects, setProjects] = useState([]);
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Fetch projects from Firebase on component mount
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        setLoading(true);
+        const fetchedProjects = await getProjects();
+        setProjects(fetchedProjects);
+        setError(null);
+      } catch (err) {
+        console.error('Failed to fetch projects:', err);
+        setError('Failed to load projects. Please try again later.');
+        
+        // Fallback to static data if Firebase fails
+        const { myProjects } = await import('../constants/index.js');
+        setProjects(myProjects);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  const projectCount = projects.length;
 
   const handleNavigation = (direction) => {
     setSelectedProjectIndex((prevIndex) => {
@@ -27,11 +53,50 @@ const Projects = () => {
     gsap.fromTo(`.animatedText`, { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.2, ease: 'power2.inOut' });
   }, [selectedProjectIndex]);
 
-  const currentProject = myProjects[selectedProjectIndex];
+  if (loading) {
+    return (
+      <section className="c-space my-20">
+        <p className="head-text">My Selected Work</p>
+        <div className="flex justify-center items-center h-64">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-white"></div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error && projects.length === 0) {
+    return (
+      <section className="c-space my-20">
+        <p className="head-text">My Selected Work</p>
+        <div className="flex justify-center items-center h-64">
+          <p className="text-red-500">{error}</p>
+        </div>
+      </section>
+    );
+  }
+
+  const currentProject = projects[selectedProjectIndex];
+
+  if (!currentProject) {
+    return (
+      <section className="c-space my-20">
+        <p className="head-text">My Selected Work</p>
+        <div className="flex justify-center items-center h-64">
+          <p className="text-white">No projects available.</p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="c-space my-20">
       <p className="head-text">My Selected Work</p>
+      
+      {error && (
+        <div className="bg-yellow-900 border border-yellow-700 text-yellow-200 px-4 py-3 rounded mb-4">
+          <p className="text-sm">⚠️ Using cached data. Some projects might not reflect recent updates.</p>
+        </div>
+      )}
 
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
         <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
