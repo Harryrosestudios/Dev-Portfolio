@@ -33,7 +33,7 @@ const Resume = () => {
         
         // Fallback to static data structure
         setResumeData({
-          header: { name: "Harry Rose", title: "Software Developer", pdfUrl: "https://resume.harryrosestudios.com" },
+          header: { name: "Harry Rose", title: "Software Developer", pdfUrl: "https://resume.harryrose.dev" },
           education: [],
           workExperience: [],
           projects: [],

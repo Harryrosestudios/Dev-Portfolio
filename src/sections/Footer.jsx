@@ -17,7 +17,7 @@ const Footer = () => {
         <a href="https://github.com/harryrosestudios/" target="_blank" rel="noopener noreferrer" className="social-icon">
           <img src="/assets/github.svg" alt="github" className="w-1/2 h-1/2" />
         </a>
-        <a href="https://resume.harryrosestudios.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+        <a href="https://resume.harryrose.dev" target="_blank" rel="noopener noreferrer" className="social-icon">
           <img src="/assets/twitter.svg" alt="resume" className="w-1/2 h-1/2" />
         </a>
         <a href="https://linkedin.com/in/harryborose" target="_blank" rel="noopener noreferrer" className="social-icon">
